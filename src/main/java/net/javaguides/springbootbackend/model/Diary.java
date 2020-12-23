@@ -24,9 +24,6 @@ public class Diary {
     @Column(name = "date")
     private String date;
 
-//    @Column(name = "img")
-//    private String img;
-
     @Column(name = "img_name")
     private String img_name;
 
