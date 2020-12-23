@@ -86,14 +86,6 @@ public class Diary {
     public void setEmotion(String emotion) {
         this.emotion = emotion;
     }
-//
-//    public String getImg() {
-//        return img;
-//    }
-//
-//    public void setImg(String img) {
-//        this.img = img;
-//    }
 
     public String getImg_name() {
         return img_name;

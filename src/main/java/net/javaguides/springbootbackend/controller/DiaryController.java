@@ -44,7 +44,6 @@ public class DiaryController {
     // create diary image
     @PostMapping("/diaries/image")
     public ResponseEntity<ResponseMessage> createDiary(@RequestParam("image") MultipartFile image, @RequestParam("id") Long id) {
-        System.out.println("들어오오앙앙아아아아아앙");
         String message = "";
         try {
             storageService.store(id, image);

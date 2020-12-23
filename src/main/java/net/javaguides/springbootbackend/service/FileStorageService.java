@@ -30,15 +30,6 @@ public class FileStorageService {
         return diaryRepository.save(diary);
     }
 
-//    public Diary modify(Long id, String title, String date, String content, String emotion, MultipartFile file) throws IOException{
-//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-//
-//
-//
-//    }
-
-
-
     public Diary getFile(Long id) {
         return diaryRepository.findById(id).get();
     }
