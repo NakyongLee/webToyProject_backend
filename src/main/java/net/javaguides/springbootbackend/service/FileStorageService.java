@@ -26,6 +26,7 @@ public class FileStorageService {
                 .orElseThrow(() -> new ResourceNotFoundException("Diary not exist with id :" + id));;
         diary.setImg_name(fileName);
         diary.setData(file.getBytes());
+        diary.setType(file.getContentType());
 
         return diaryRepository.save(diary);
     }

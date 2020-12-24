@@ -27,6 +27,9 @@ public class Diary {
     @Column(name = "img_name")
     private String img_name;
 
+    @Column(name = "type")
+    private String type;
+
     @Lob
     @Column(name = "data")
     private byte[] data;
@@ -35,19 +38,21 @@ public class Diary {
 
     }
 
-    public Diary(String title, String date, String content, String emotion, String img_name, byte[] data
-    ) {
+    public Diary(String title, String date, String content, String emotion, String img_name, String type, byte[] data) {
         super();
         this.title = title;
         this.date = date;
         this.content = content;
         this.emotion = emotion;
         this.img_name = img_name;
+        this.type = type;
         this.data = data;
     }
+
     public long getId() {
         return id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -90,6 +95,14 @@ public class Diary {
 
     public void setImg_name(String img_name) {
         this.img_name = img_name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public byte[] getData() {

@@ -65,7 +65,18 @@ public class DiaryController {
 
         byte[] imageBytes = null;
         imageBytes = diary.getData();
-        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
+        String imgType = diary.getType();
+
+        if(imgType.equals("image/jpeg"))
+            return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
+        else if(imgType.equals("image/jpg"))
+            return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
+        else if (imgType.equals("image/png"))
+            return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG).body(imageBytes);
+        //else if (imgType.equals("image/gif"))
+            //return ResponseEntity.ok().contentType(MediaType.IMAGE_GIF).body(imageBytes);
+        else
+            return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imageBytes);
     }
 
     // get diary by id rest api
@@ -77,7 +88,6 @@ public class DiaryController {
     }
 
     // update diary rest api
-
     @PutMapping("/diaries/{id}")
     public ResponseEntity < Diary > updateDiary(@PathVariable Long id, @RequestBody Diary diaryDetails) throws IOException {
         Diary diary = diaryRepository.findById(id)
