@@ -56,6 +56,18 @@ public class DiaryController {
 
     }
 
+    //Delete Image
+    @DeleteMapping("/diaries/image/{id}")
+    public ResponseEntity < Diary > deleteImage(@PathVariable Long id) throws IOException {
+        Diary diary = diaryRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Diary not exist with id :" + id));
+
+        diary.setImg_name(null);
+        diary.setData(null);
+
+        Diary updatedDiary = diaryRepository.save(diary);
+        return ResponseEntity.ok(updatedDiary);
+    }
 
     //image url
     @GetMapping("/diaries/image/{id}")
