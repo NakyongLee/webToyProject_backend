@@ -107,7 +107,7 @@ public class DiaryController {
 
         diary.setTitle(diaryDetails.getTitle());
         diary.setContent(diaryDetails.getContent());
-        diary.setContent(diaryDetails.getDate());
+        diary.setDate(diaryDetails.getDate());
         diary.setEmotion(diaryDetails.getEmotion());
 
         Diary updatedDiary = diaryRepository.save(diary);
